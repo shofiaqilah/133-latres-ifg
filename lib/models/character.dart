@@ -24,7 +24,11 @@ class Character {
       nickname: json['nickname'] ?? 'no nickname',
       hogwartsHouse: json['hogwartsHouse'] ?? '',
       interpretedBy: json['interpretedBy'] ?? '',
-      children: json['children'] ?? '',
+      children:
+          (json['children'] as List<dynamic>?)
+              ?.map((child) => child.toString())
+              .toList() ??
+          [],
       image: json['image'] ?? '',
       birthdate: json['birthdate'] ?? '',
     );
