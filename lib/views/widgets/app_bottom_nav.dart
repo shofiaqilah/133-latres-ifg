@@ -12,7 +12,7 @@ class AppBottomNav extends StatelessWidget {
       currentIndex: currentIndex,
       onTap: (index) {
         if (index == 0 && currentIndex != 0) {
-          Get.offNamed('/character');
+          Get.offNamed('/characters');
         } else if (index == 1 && currentIndex != 1) {
           Get.offNamed('/spells');
         }

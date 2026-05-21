@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:latres_ifg/bindings/character_binding.dart';
+import 'package:latres_ifg/bindings/spell_binding.dart';
 import 'package:latres_ifg/models/spell.dart';
 import 'package:latres_ifg/views/pages/character_detail_page.dart';
 import 'package:latres_ifg/views/pages/character_page.dart';
@@ -38,10 +40,22 @@ class MainApp extends StatelessWidget {
       // routes
       getPages: [
         GetPage(name: '/login', page: () => LoginView()),
-        GetPage(name: '/characters', page: () => CharacterView()),
+        GetPage(
+          name: '/characters',
+          page: () => CharacterView(),
+          binding: CharacterBinding(),
+        ),
         GetPage(name: '/character-detail', page: () => CharacterDetailView()),
-        GetPage(name: '/spells', page: () => SpellView()),
-        GetPage(name: '/favorite-spells', page: () => FavoriteSpellView()),
+        GetPage(
+          name: '/spells',
+          page: () => SpellView(),
+          binding: SpellBinding(),
+        ),
+        GetPage(
+          name: '/favorite-spells',
+          page: () => FavoriteSpellView(),
+          binding: SpellBinding(),
+        ),
       ],
     );
   }

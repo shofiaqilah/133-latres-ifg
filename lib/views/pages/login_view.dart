@@ -24,7 +24,8 @@ class _LoginViewState extends State<LoginView> {
     final loggedIn = await SessionService.isLoggedIn();
 
     if (loggedIn && mounted) {
-      Get.offAllNamed('/character');
+      // lgsg pindah ke page characters
+      Get.offAllNamed('/characters');
     }
   }
 
@@ -49,7 +50,8 @@ class _LoginViewState extends State<LoginView> {
       );
 
       if (mounted) {
-        Get.offAllNamed('/character');
+        // diarahkan ke page characters
+        Get.offAllNamed('/characters');
       }
     } else {
       isLoading.value = false;
